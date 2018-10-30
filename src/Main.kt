@@ -13,13 +13,16 @@ object Main: Listeners.ReadFile, Listeners.Swap{
 
     override fun fileComplete(value: ArrayList<Char>, command: ArrayList<Char>) {
         fifo = FIFO(3, 4, value, this)
-        sc = SecondChance(3, 4, 2, value, this)
+        sc = SecondChance(3, 4, 10, value, this)
     }
 
 
     override fun swapComplete() {
-        println("fifo is ${fifo.isComplete()}")
-        println("sc is ${sc.isComplete()}")
+        if (fifo.isComplete() && sc.isComplete()){
+            println("fifo is ${fifo.isComplete()}")
+            println("sc is ${sc.isComplete()}")
+        }
+
     }
 
 }

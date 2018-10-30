@@ -25,8 +25,7 @@ class FileHelper(private var listener: Listeners.ReadFile) : Thread() {
             }
         }
         println(value)
-        println(command)
-        listener?.fileComplete(value, command)
+        listener.fileComplete(value, command)
     }
 
 

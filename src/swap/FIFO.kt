@@ -1,6 +1,8 @@
 package swap
 
 import Listeners
+import moveToDown
+import removeFirst
 
 class FIFO(private val lowestFrame: Int,
            private val biggerFrame: Int,
@@ -28,8 +30,7 @@ class FIFO(private val lowestFrame: Int,
                 when{
                     it in memory -> hits++
                     i == memory.size ->{
-                        memory.removeAt(0)
-                        memory.add(it)
+                        memory.moveToDown()
                     }
                     else -> memory.add(it)
                 }

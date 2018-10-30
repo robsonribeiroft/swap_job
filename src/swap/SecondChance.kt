@@ -1,5 +1,6 @@
 package swap
 
+import moveToDown
 import removeFirst
 
 class SecondChance(private val lowestFrame: Int,
@@ -13,10 +14,12 @@ class SecondChance(private val lowestFrame: Int,
     private var hits = 0
     private val results = ArrayList<Int>()
 
+    init {
+        Thread(this).start()
+    }
+
     private fun clearBitR(){
-        for (i in 0 until R.size){
-            R[i] = false
-        }
+        for (i in 0 until R.size) R[i] = false
     }
 
     fun isComplete():Boolean = (biggerFrame-lowestFrame+1) == results.size
@@ -29,9 +32,7 @@ class SecondChance(private val lowestFrame: Int,
             hits = 0
             values.forEachIndexed { index, char ->
                 when{
-                    (index%zero==0) && index!=0->{
-                        clearBitR()
-                    }
+                    (index%zero==0) && index!=0 -> clearBitR()
                     char in memory->{
                         memory.forEachIndexed { mi, c ->
                             if (c == char) R[mi] = true
@@ -43,26 +44,25 @@ class SecondChance(private val lowestFrame: Int,
                         R.add(true)
                     }
                     else->{
-                        var carry: Char = memory.first()
 
                         while(R.first()){
-                            R.removeAt(0)
-                            carry = memory.first()
-                            memory.removeFirst()
-                            memory.add(carry)
+                            memory.moveToDown()
+                            R.removeFirst()
                             R.add(false)
                         }
 
-                        memory.removeFirst()
+                        memory.moveToDown()
                         R.removeFirst()
-                        memory.add(carry)
                         R.add(true)
+
                     }
 
                 }
             }
+
             results.add(hits)
         }
+        listeners.swapComplete()
     }
 
 
