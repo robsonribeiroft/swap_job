@@ -1,68 +1,49 @@
 package swap
 
-import moveToDown
-import removeFirst
+import extensions.moveToDown
+import extensions.removeFirst
 
-class SecondChance(private val lowestFrame: Int,
-                   private val biggerFrame: Int,
-                   private val zero: Int,
-                   private val values: ArrayList<Char>,
-                   private val listeners: Listeners.Swap): Thread() {
-
-    private var memory: ArrayList<Char> = ArrayList()
-    private var R: ArrayList<Boolean> = ArrayList()
-    private var hits = 0
-    private val results = ArrayList<Int>()
+class SecondChance(frame: Int,
+                   values: ArrayList<Char>,
+                   zero: Int,
+                   listener: Listeners.Swap): Swap(frame, values, listener, zero) {
 
     init {
         Thread(this).start()
     }
 
-    private fun clearBitR(){
-        for (i in 0 until R.size) R[i] = false
-    }
-
-    fun isComplete():Boolean = (biggerFrame-lowestFrame+1) == results.size
-
     override fun run() {
         super.run()
-        for (i in lowestFrame..biggerFrame){
-            memory = ArrayList()
-            R = ArrayList()
-            hits = 0
-            values.forEachIndexed { index, char ->
-                when{
-                    (index%zero==0) && index!=0 -> clearBitR()
-                    char in memory->{
-                        memory.forEachIndexed { mi, c ->
-                            if (c == char) R[mi] = true
-                        }
-                        hits++
+        values.forEachIndexed { index, char ->
+            when{
+                (index%zero==0) && index!=0 -> clearBitR()
+                char in memory->{
+                    memory.forEachIndexed { mi, c ->
+                        if (c == char) R[mi] = true
                     }
-                    memory.size < i->{
-                        memory.add(char)
-                        R.add(true)
-                    }
-                    else->{
+                    hits++
+                }
+                memory.size < frame->{
+                    memory.add(char)
+                    R.add(true)
+                }
+                else->{
 
-                        while(R.first()){
-                            memory.moveToDown()
-                            R.removeFirst()
-                            R.add(false)
-                        }
-
+                    while(R.first()){
                         memory.moveToDown()
                         R.removeFirst()
-                        R.add(true)
-
+                        R.add(false)
                     }
 
-                }
-            }
+                    memory.moveToDown()
+                    R.removeFirst()
+                    R.add(true)
 
-            results.add(hits)
+                }
+
+            }
         }
-        listeners.swapComplete()
+        listener.swapComplete(Triple("SC", frame, hits))
     }
 
 

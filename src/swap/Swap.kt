@@ -1,13 +1,17 @@
 package swap
 
-abstract class Swap(private val lowestFrame: Int,
-                    private val biggerFrame: Int,
-                    private val values: ArrayList<Char>,
-                    private val listeners: Listeners.Swap): Thread(){
+abstract class Swap(protected val frame: Int,
+                    protected val values: ArrayList<Char>,
+                    protected val listener: Listeners.Swap,
+                    protected val zero: Int=1,
+                    protected val commands: ArrayList<Char>?=null): Thread(){
 
-    private var memory: ArrayList<Char> = ArrayList()
-    private var hits = 0
-    private val results = ArrayList<Int>()
+    protected var memory: ArrayList<Char> = ArrayList()
+    protected var R: ArrayList<Boolean> = ArrayList()
+    protected var M: ArrayList<Boolean> = ArrayList()
+    protected var hits = 0
 
-    fun isComplete():Boolean = (biggerFrame-lowestFrame+1) == results.size
+    protected fun clearBitR(){
+        for (i in 0 until R.size) R[i] = false
+    }
 }

@@ -9,11 +9,6 @@ class FileHelper(private var listener: Listeners.ReadFile) : Thread() {
         Thread(this).start()
     }
 
-
-//    init {
-//        Thread(this).start()
-//    }
-
     override fun run() {
         super.run()
         File("/home/robson/IdeaProjects/SwapJob/src/REFERENCIAS_100.TXT").forEachLine { line: String ->
@@ -24,7 +19,6 @@ class FileHelper(private var listener: Listeners.ReadFile) : Thread() {
                 }
             }
         }
-        println(value)
         listener.fileComplete(value, command)
     }
 

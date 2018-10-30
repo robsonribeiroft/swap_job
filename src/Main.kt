@@ -1,10 +1,13 @@
 import swap.FIFO
 import swap.SecondChance
+import java.util.*
 
 object Main: Listeners.ReadFile, Listeners.Swap{
 
-    lateinit var fifo: FIFO
-    lateinit var sc: SecondChance
+
+    private const val start = 3
+    private const val end = 5
+    private val results = ArrayList<Triple<*,Int,*>>()
 
     @JvmStatic
     fun main(args: Array<String>) {
@@ -12,17 +15,20 @@ object Main: Listeners.ReadFile, Listeners.Swap{
     }
 
     override fun fileComplete(value: ArrayList<Char>, command: ArrayList<Char>) {
-        fifo = FIFO(3, 4, value, this)
-        sc = SecondChance(3, 4, 10, value, this)
-    }
-
-
-    override fun swapComplete() {
-        if (fifo.isComplete() && sc.isComplete()){
-            println("fifo is ${fifo.isComplete()}")
-            println("sc is ${sc.isComplete()}")
+        for (i in start..end){
+            FIFO(i, value, this)
+            SecondChance(i, value, 10, this)
         }
-
     }
+
+    override fun swapComplete(triple: Triple<*, Int, *>) {
+        results.add(triple)
+
+        if ((end- start+1)*2 == results.size){
+            results.sortBy(Triple<*, Int, *>::second)
+            println("$results")
+        }
+    }
+
 
 }

@@ -1,43 +1,29 @@
 package swap
 
-import Listeners
-import moveToDown
-import removeFirst
+import extensions.moveToDown
 
-class FIFO(private val lowestFrame: Int,
-           private val biggerFrame: Int,
-           private val values: ArrayList<Char>,
-           private val listeners: Listeners.Swap): Thread() {
-
-    private var memory: ArrayList<Char> = ArrayList()
-    private var hits = 0
-    private val results = ArrayList<Int>()
+class FIFO(frame: Int,
+           values: ArrayList<Char>,
+           listener: Listeners.Swap): Swap(frame, values, listener) {
 
     init {
         Thread(this).start()
     }
 
-    fun isComplete():Boolean = (biggerFrame-lowestFrame+1) == results.size
-
     override fun run() {
         super.run()
 
-        for (i in lowestFrame..biggerFrame){
-
-            memory = ArrayList()
-
-            values.forEach {
-                when{
-                    it in memory -> hits++
-                    i == memory.size ->{
-                        memory.moveToDown()
-                    }
-                    else -> memory.add(it)
+        values.forEach {
+            when{
+                it in memory -> hits++
+                frame == memory.size ->{
+                    memory.moveToDown()
                 }
+                else -> memory.add(it)
             }
-            results.add(hits)
-            hits = 0
         }
-        listeners.swapComplete()
+        listener.swapComplete(Triple("FIFO", frame, hits))
     }
+
+
 }
