@@ -5,6 +5,6 @@ interface Listeners {
     }
 
     interface Swap{
-        fun swapComplete(triple: Triple<*, Int, *>)
+        fun swapComplete(triple: Triple<String, Int, Int>)
     }
 }
