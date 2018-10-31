@@ -1,6 +1,10 @@
 import swap.FIFO
 import swap.SecondChance
+import java.io.FileInputStream
 import java.util.*
+import javax.swing.JFileChooser
+import javax.swing.JWindow
+import kotlin.collections.ArrayList
 
 object Main: Listeners.ReadFile, Listeners.Swap{
 
@@ -11,6 +15,15 @@ object Main: Listeners.ReadFile, Listeners.Swap{
 
     @JvmStatic
     fun main(args: Array<String>) {
+
+//        val jWindow = JWindow()
+//        val fileChooser = JFileChooser()
+//        fileChooser.showOpenDialog(jWindow)
+//        val file = fileChooser.selectedFile
+//        val stream = FileInputStream(file)
+//
+//
+//        println("name: ${file.path}")
         FileHelper(this)
     }
 
@@ -25,12 +38,25 @@ object Main: Listeners.ReadFile, Listeners.Swap{
         results.add(triple)
 
         if ((end - start+1)*2 == results.size){
-            results.sortBy(Triple<*, Int, *>::second)
-            val fifos = results.fold(ArrayList<Triple<String, Int, Int>>()){acc, c-> divide("FIFO", acc, c)}
-            println("$fifos")
+            val fifo = results.filter { it.first==FIFO.TAG }
+                    .sortedBy { it.second }
+                    .map { it.third }
+
+//            fifo = results.filter { it.first==FIFO.TAG }
+//                    .withIndex()
+//                    .sortedBy { (i, t) -> t.second }
+//                    .map { (i, t) -> t.third }
+
+//            results.sortBy(Triple<*, Int, *>::second)
+//            fifo = results.fold(ArrayList<Triple<String, Int, Int>>()){
+//                acc, c-> divide(SecondChance.TAG, acc, c)
+//            }.map { it.third }
+
+            println(fifo)
 
         }
     }
+
 
     private fun divide(section: String, acc: ArrayList<Triple<String, Int, Int>>, c: Triple<String, Int, Int>): ArrayList<Triple<String, Int, Int>> {
         return if (c.first == section) {

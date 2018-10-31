@@ -1,6 +1,6 @@
 package swap
 
-abstract class Swap(protected val frame: Int,
+open class Swap(protected val frame: Int,
                     protected val values: ArrayList<Char>,
                     protected val listener: Listeners.Swap,
                     protected val zero: Int=1,

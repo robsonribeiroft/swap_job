@@ -43,7 +43,11 @@ class SecondChance(frame: Int,
 
             }
         }
-        listener.swapComplete(Triple("SC", frame, hits))
+        listener.swapComplete(Triple(TAG, frame, hits))
+    }
+
+    companion object {
+        const val TAG = "SC"
     }
 
 

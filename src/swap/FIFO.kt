@@ -22,7 +22,11 @@ class FIFO(frame: Int,
                 else -> memory.add(it)
             }
         }
-        listener.swapComplete(Triple("FIFO", frame, hits))
+        listener.swapComplete(Triple(TAG, frame, hits))
+    }
+
+    companion object {
+        const val TAG = "FIFO"
     }
 
 
