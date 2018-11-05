@@ -4,7 +4,7 @@ import extensions.moveToDown
 import extensions.removeFirst
 
 class SecondChance(frame: Int,
-                   values: ArrayList<Char>,
+                   values: ArrayList<String>,
                    zero: Int,
                    listener: Listeners.Swap): Swap(frame, values, listener, zero) {
 

@@ -1,9 +1,7 @@
+import extensions.toDec
 import java.io.File
 
-class FileHelper(private var listener: Listeners.ReadFile) : Thread() {
-
-    private val value: ArrayList<Char> = ArrayList()
-    private val command: ArrayList<Char> = ArrayList()
+class FileHelper(private var listener: Listeners.ReadFile?=null) : Thread() {
 
     init {
         Thread(this).start()
@@ -11,15 +9,29 @@ class FileHelper(private var listener: Listeners.ReadFile) : Thread() {
 
     override fun run() {
         super.run()
-        File("/home/robson/IdeaProjects/SwapJob/src/REFERENCIAS_100.TXT").forEachLine { line: String ->
-            line.forEachIndexed { index, char ->
-                if (char.toByte().toInt() in 48..57){
-                    value.add(char)
-                    command.add(line[index+1])
-                }
+        File("/home/robson/IdeaProjects/SwapJob/src/REFERENCIAS_100k.TXT").forEachLine { line: String ->
+             listener?.fileComplete(line.fold(Pair(ArrayList(), ArrayList())){ acc, c->
+                 divide(acc, c)
+             })
+        }
+
+    }
+
+    private fun divide(acc: Pair<ArrayList<String>, ArrayList<Char>>, c: Char): Pair<ArrayList<String>, ArrayList<Char>> {
+        when{
+            acc.first.isEmpty() || c == '-' ->{
+                acc.first.add("")
+            }
+            c.toDec() in 48..57 ->{
+                val lastValue = acc.first.last()
+                acc.first[acc.first.lastIndex] = lastValue + c
+            }
+            else->{
+                acc.second.add(c)
             }
         }
-        listener.fileComplete(value, command)
+        return acc
+
     }
 
 

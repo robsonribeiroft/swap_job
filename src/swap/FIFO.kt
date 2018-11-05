@@ -3,7 +3,7 @@ package swap
 import extensions.moveToDown
 
 class FIFO(frame: Int,
-           values: ArrayList<Char>,
+           values: ArrayList<String>,
            listener: Listeners.Swap): Swap(frame, values, listener) {
 
     init {

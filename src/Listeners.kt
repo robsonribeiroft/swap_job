@@ -1,7 +1,7 @@
 interface Listeners {
 
     interface ReadFile{
-        fun fileComplete(value: ArrayList<Char>, command: ArrayList<Char>)
+        fun fileComplete(result: Pair<ArrayList<String>, ArrayList<Char>>)
     }
 
     interface Swap{
