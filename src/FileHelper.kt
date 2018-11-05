@@ -1,3 +1,4 @@
+import extensions.concat
 import extensions.toDec
 import java.io.File
 
@@ -19,16 +20,9 @@ class FileHelper(private var listener: Listeners.ReadFile?=null) : Thread() {
 
     private fun divide(acc: Pair<ArrayList<String>, ArrayList<Char>>, c: Char): Pair<ArrayList<String>, ArrayList<Char>> {
         when{
-            acc.first.isEmpty() || c == '-' ->{
-                acc.first.add("")
-            }
-            c.toDec() in 48..57 ->{
-                val lastValue = acc.first.last()
-                acc.first[acc.first.lastIndex] = lastValue + c
-            }
-            else->{
-                acc.second.add(c)
-            }
+            acc.first.isEmpty() || c == '-' -> acc.first.add("")
+            c.toDec() in 48..57 -> acc.first.concat(c)
+            else-> acc.second.add(c)
         }
         return acc
 

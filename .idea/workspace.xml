@@ -3,18 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5a92a7fa-a2a6-4b18-855d-95035fe8a595" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SwapJob/FileHelper$run$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SwapJob/FileHelper$run$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SwapJob/FileHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SwapJob/FileHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SwapJob/META-INF/SwapJob.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SwapJob/META-INF/SwapJob.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SwapJob/Main$swapComplete$$inlined$sortBy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SwapJob/Main$swapComplete$$inlined$sortedBy$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SwapJob/Main$swapComplete$$inlined$sortedBy$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SwapJob/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SwapJob/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SwapJob/extensions/ArrayListExtensionKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SwapJob/extensions/ArrayListExtensionKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FileHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Listeners.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listeners.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/extensions/ArrayListExtension.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/extensions/ArrayListExtension.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swap/FIFO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/swap/FIFO.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swap/SecondChance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/swap/SecondChance.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swap/Swap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/swap/Swap.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,12 +33,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="kt" value="5503" />
+          <entry key="kt" value="5687" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Kotlin" value="5503" />
+          <entry key="Kotlin" value="5687" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -66,11 +59,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+            <state relative-caret-position="444">
+              <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
               <folding>
                 <element signature="e#0#186#0" expanded="true" />
               </folding>
@@ -99,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/swap/SecondChance.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="49" lean-forward="true" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+            <state relative-caret-position="195">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#14#72#0" expanded="true" />
               </folding>
@@ -108,13 +101,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FileHelper.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
+            <state relative-caret-position="315">
+              <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
               <folding>
-                <element signature="e#0#43#0" expanded="true" />
+                <element signature="e#0#95#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/extensions/ArrayListExtension.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="165">
+              <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -183,14 +176,14 @@
         <option value="$PROJECT_DIR$/src/swap/FIFOInherited.kt" />
         <option value="$PROJECT_DIR$/src/swap/SecondChanceInherited.kt" />
         <option value="$PROJECT_DIR$/src/extensions/IntExtension.kt" />
-        <option value="$PROJECT_DIR$/src/extensions/ArrayListExtension.kt" />
         <option value="$PROJECT_DIR$/src/extensions/CharExtension.kt" />
         <option value="$PROJECT_DIR$/src/Listeners.kt" />
-        <option value="$PROJECT_DIR$/src/FileHelper.kt" />
         <option value="$PROJECT_DIR$/src/swap/FIFO.kt" />
         <option value="$PROJECT_DIR$/src/swap/SecondChance.kt" />
         <option value="$PROJECT_DIR$/src/swap/Swap.kt" />
         <option value="$PROJECT_DIR$/src/Main.kt" />
+        <option value="$PROJECT_DIR$/src/extensions/ArrayListExtension.kt" />
+        <option value="$PROJECT_DIR$/src/FileHelper.kt" />
       </list>
     </option>
   </component>
@@ -239,7 +232,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541121430941" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541447140285" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../so2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -309,7 +302,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.5105348" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.19448946" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -362,27 +355,10 @@
     <entry file="file://$PROJECT_DIR$/src/REFERENCIAS_100.TXT">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/extensions/ArrayListExtension.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/extensions/CharExtension.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileHelper.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -393,13 +369,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/swap/Swap.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/swap/FIFO.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -407,10 +376,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/swap/SecondChance.kt">
+    <entry file="file://$PROJECT_DIR$/src/swap/Swap.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="49" lean-forward="true" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swap/SecondChance.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="e#14#72#0" expanded="true" />
           </folding>
@@ -419,10 +395,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+        <state relative-caret-position="444">
+          <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
           <folding>
             <element signature="e#0#186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extensions/ArrayListExtension.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FileHelper.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#95#0" expanded="true" />
           </folding>
         </state>
       </provider>
