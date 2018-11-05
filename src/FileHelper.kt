@@ -12,19 +12,14 @@ class FileHelper(private var listener: Listeners.ReadFile?=null) : Thread() {
         super.run()
         File("/home/robson/IdeaProjects/SwapJob/src/REFERENCIAS_100k.TXT").forEachLine { line: String ->
              listener?.fileComplete(line.fold(Pair(ArrayList(), ArrayList())){ acc, c->
-                 divide(acc, c)
+                 when{
+                     acc.first.isEmpty() || c == '-' -> acc.first.add("")
+                     c.toDec() in 48..57 -> acc.first.concat(c)
+                     else-> acc.second.add(c)
+                 }
+                 return@fold acc
              })
         }
-
-    }
-
-    private fun divide(acc: Pair<ArrayList<String>, ArrayList<Char>>, c: Char): Pair<ArrayList<String>, ArrayList<Char>> {
-        when{
-            acc.first.isEmpty() || c == '-' -> acc.first.add("")
-            c.toDec() in 48..57 -> acc.first.concat(c)
-            else-> acc.second.add(c)
-        }
-        return acc
 
     }
 
